@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1078015554243",
+    "firebase_url": "https://kantinamikom.firebaseio.com",
+    "project_id": "kantinamikom",
+    "storage_bucket": "kantinamikom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078015554243:android:d529a75b5892333c672876",
+        "android_client_info": {
+          "package_name": "com.chickennoodleteam.kantinamikom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078015554243-r9frqbvjugrqcpfbrusjimb3d1mr5967.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.chickennoodleteam.kantinamikom",
+            "certificate_hash": "d258d44e66531c5cb326e6141972d75089cbfd15"
+          }
+        },
+        {
+          "client_id": "1078015554243-t7h185slf16ftrqidigcth1r1es1odhl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTqb3bHCWe6nSweSszswTobXXuMeAmyqY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078015554243-t7h185slf16ftrqidigcth1r1es1odhl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
