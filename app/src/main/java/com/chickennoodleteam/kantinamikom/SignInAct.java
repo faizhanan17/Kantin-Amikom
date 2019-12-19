@@ -44,42 +44,60 @@ public class SignInAct extends AppCompatActivity {
                 final String nim = xnim.getText().toString();
                 final String pw = xpw.getText().toString();
 
-                reference = FirebaseDatabase.getInstance().getReference().child("Users").child(nim);
-                reference.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.exists()){
-                            //Toast.makeText(getApplicationContext(), "Selamat Datang :)", Toast.LENGTH_SHORT).show();
-                            //ambil data db
-
-                            String pwdariFirebase = dataSnapshot.child("pw").getValue().toString();
-                            if (pw.equals(pwdariFirebase)){
-
-                                //Simpan pada local username
-                                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-                                editor.putString(username_key, xnim.getText().toString());
-                                editor.apply();
-
-                                Intent gotohome = new Intent(SignInAct.this, HomeAct.class);
-                                startActivity(gotohome);
-                            }
-                            else {
-                                Toast.makeText(getApplicationContext(), "Password Salah", Toast.LENGTH_SHORT).show();
-                            }
-
-                        }
-                        else {
-                            Toast.makeText(getApplicationContext(), "NIM tidak ada !", Toast.LENGTH_SHORT).show();
-                        }
+                if(nim.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "NIM Kosong !", Toast.LENGTH_SHORT).show();
+                    btn_signin.setEnabled(true);
+                    btn_signin.setText("SIGN IN");
+                }
+                else {
+                    if (pw.isEmpty()){
+                        Toast.makeText(getApplicationContext(), "Password Kosong !", Toast.LENGTH_SHORT).show();
+                        btn_signin.setEnabled(true);
+                        btn_signin.setText("SIGN IN");
                     }
+                    else{
+                        reference = FirebaseDatabase.getInstance().getReference().child("Users").child(nim);
+                        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists()){
+                                    //Toast.makeText(getApplicationContext(), "Selamat Datang :)", Toast.LENGTH_SHORT).show();
+                                    //ambil data db
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                        Toast.makeText(getApplicationContext(), "Database Error", Toast.LENGTH_SHORT).show();
+                                    String pwdariFirebase = dataSnapshot.child("pw").getValue().toString();
+                                    if (pw.equals(pwdariFirebase)){
+
+                                        //Simpan pada local username
+                                        SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                                        editor.putString(username_key, xnim.getText().toString());
+                                        editor.apply();
+
+                                        Intent gotohome = new Intent(SignInAct.this, HomeAct.class);
+                                        startActivity(gotohome);
+                                    }
+                                    else {
+                                        Toast.makeText(getApplicationContext(), "Password Salah", Toast.LENGTH_SHORT).show();
+                                        btn_signin.setEnabled(true);
+                                        btn_signin.setText("SIGN IN");
+
+                                    }
+
+                                }
+                                else {
+                                    Toast.makeText(getApplicationContext(), "NIM tidak ada !", Toast.LENGTH_SHORT).show();
+                                    btn_signin.setEnabled(true);
+                                    btn_signin.setText("SIGN IN");
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                                Toast.makeText(getApplicationContext(), "Database Error", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
-                });
-
+                }
 
             }
         });

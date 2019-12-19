@@ -119,7 +119,7 @@ public class CheckoutAct extends AppCompatActivity {
                     btn_kurang.setEnabled(false);
                 }
                 valueTotalharga = valueHarga * valuePesanan;
-                txt_totalHarga.setText("RP."+valueTotalharga+"");
+                txt_totalHarga.setText("Rp."+valueTotalharga+"");
             }
         });
 
