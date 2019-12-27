@@ -21,15 +21,12 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="0dp">
 
-            <ImageView
-                android:id="@+id/foodmenu"
+            <View
+                android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bakso"
+                android:background="@drawable/bg_overlay_signin"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:gravity="center"
-                android:text="MAKANAN"
+                android:text="KERANJANG"
                 android:textColor="#FFFFFF"
                 android:textSize="50sp"
                 android:textStyle="bold"
@@ -52,7 +49,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="150dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/shape"
                 android:orientation="vertical"
@@ -68,7 +65,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="MENU"
+                    android:text="Menu yang sudah di pesan"
                     android:textSize="20dp"
                     android:textStyle="bold" />
 
@@ -78,6 +75,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
                     android:background="#EDEDED" />
+
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/tempat_pesanan"
                     android:layout_width="match_parent"
@@ -92,23 +90,104 @@
 
     </ScrollView>
 
-    <Button
-        android:id="@+id/btn_signin"
-        android:layout_marginTop="10dp"
+    <LinearLayout
+        android:id="@+id/btn_clear"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@drawable/shapebtn"
-        android:text="Bayar Sekarang"
-        android:textColor="#FFFFFF"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shapebtn2"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Batalkan Pesanan"
+            android:textColor="#FFF"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_bayar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/shapebtn"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/btn_clear"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="1.0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bayar"
+            android:textColor="#FFF"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/shape"
+        android:orientation="vertical"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.762"
-        android:layout_marginBottom="10dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Saldo Anda = " />
+
+            <TextView
+                android:id="@+id/txt_saldobasket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Total Bayar = " />
+
+            <TextView
+                android:id="@+id/txt_totalbayar_basket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BasketAct"></activity>
+        <activity android:name=".PembayaranAct" />
+        <activity android:name=".BasketAct" />
         <activity android:name=".CheckoutAct" />
-        <activity android:name=".SnackAct" />
         <activity android:name=".DrinkAct" />
         <activity android:name=".FoodAct" />
         <activity android:name=".HomeAct" />

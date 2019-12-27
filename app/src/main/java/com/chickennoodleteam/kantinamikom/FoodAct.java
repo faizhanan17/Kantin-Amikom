@@ -148,7 +148,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent gotocheckout = new Intent(FoodAct.this,CheckoutAct.class);
-                gotocheckout.putExtra("jenis_makanan","bakso");
+                gotocheckout.putExtra("jenis_makanan_dan_minuman","bakso");
                 startActivity(gotocheckout);
             }
         });
@@ -157,7 +157,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent gotocheckout = new Intent(FoodAct.this,CheckoutAct.class);
-                gotocheckout.putExtra("jenis_makanan","pecel");
+                gotocheckout.putExtra("jenis_makanan_dan_minuman","pecel");
                 startActivity(gotocheckout);
             }
         });
@@ -166,7 +166,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent gotocheckout = new Intent(FoodAct.this,CheckoutAct.class);
-                gotocheckout.putExtra("jenis_makanan","gadogado");
+                gotocheckout.putExtra("jenis_makanan_dan_minuman","gadogado");
                 startActivity(gotocheckout);
             }
         });
@@ -176,7 +176,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent gotocheckout = new Intent(FoodAct.this,CheckoutAct.class);
-                gotocheckout.putExtra("jenis_makanan","nasgor");
+                gotocheckout.putExtra("jenis_makanan_dan_minuman","nasgor");
                 startActivity(gotocheckout);
             }
         });
@@ -185,7 +185,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent gotocheckout = new Intent(FoodAct.this,CheckoutAct.class);
-                gotocheckout.putExtra("jenis_makanan","nasisayur");
+                gotocheckout.putExtra("jenis_makanan_dan_minuman","nasisayur");
                 startActivity(gotocheckout);
             }
         });
@@ -194,7 +194,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent gotocheckout = new Intent(FoodAct.this,CheckoutAct.class);
-                gotocheckout.putExtra("jenis_makanan","mieayam");
+                gotocheckout.putExtra("jenis_makanan_dan_minuman","mieayam");
                 startActivity(gotocheckout);
             }
         });

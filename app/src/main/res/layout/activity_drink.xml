@@ -20,15 +20,12 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="0dp">
 
-            <ImageView
-                android:id="@+id/foodmenu"
+            <View
+                android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_marginStart="0dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="0dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/bakso"
+                android:background="@drawable/bg_overlay_signin"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -54,6 +51,7 @@
                 android:orientation="vertical"
                 android:paddingTop="30dp"
                 android:paddingBottom="30dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="150dp"
@@ -98,8 +96,7 @@
                         <ImageView
                             android:id="@+id/img_teh"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/userprofile" />
+                            android:layout_height="80dp"/>
 
                         <TextView
                             android:id="@+id/txt_teh"
@@ -125,93 +122,10 @@
                         <ImageView
                             android:id="@+id/img_jeruk"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/userprofile" />
+                            android:layout_height="80dp" />
 
                         <TextView
                             android:id="@+id/txt_jeruk"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp"
-                            android:layout_marginTop="25dp"
-                            android:paddingLeft="10dp"
-                            />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btn_escampur"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:orientation="horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:paddingBottom="10dp">
-
-                        <ImageView
-                            android:id="@+id/img_escampur"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/userprofile" />
-
-                        <TextView
-                            android:id="@+id/txt_escampur"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp"
-                            android:layout_marginTop="25dp"
-                            android:paddingLeft="10dp"
-
-                            />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btn_dawet"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:orientation="horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:paddingBottom="10dp">
-
-                        <ImageView
-                            android:id="@+id/img_dawet"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/userprofile" />
-
-                        <TextView
-                            android:id="@+id/txt_dawet"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:paddingTop="5dp"
-                            android:layout_marginTop="25dp"
-                            android:paddingLeft="10dp"
-                            />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/btn_goodday"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:orientation="horizontal"
-                        android:layout_marginLeft="10dp"
-                        android:paddingBottom="10dp">
-
-                        <ImageView
-                            android:id="@+id/img_goodday"
-                            android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/userprofile" />
-
-                        <TextView
-                            android:id="@+id/txt_goodday"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="5dp"
@@ -234,8 +148,7 @@
                         <ImageView
                             android:id="@+id/img_kopi"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/userprofile" />
+                            android:layout_height="80dp" />
 
                         <TextView
                             android:id="@+id/txt_kopi"
@@ -244,9 +157,146 @@
                             android:paddingTop="5dp"
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
+
                             />
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_goodday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/img_goodday"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp" />
+
+                        <TextView
+                            android:id="@+id/txt_goodday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="25dp"
+                            android:paddingLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="#EDEDED" />
+
+                    <LinearLayout
+                        android:id="@+id/btn_esteh"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/img_esteh"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp" />
+
+                        <TextView
+                            android:id="@+id/txt_esteh"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="25dp"
+                            android:paddingLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_esjeruk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/img_esjeruk"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp" />
+
+                        <TextView
+                            android:id="@+id/txt_esjeruk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="25dp"
+                            android:paddingLeft="10dp"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/btn_esgoodday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/img_esgoodday"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp" />
+
+                        <TextView
+                            android:id="@+id/txt_esgoodday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="25dp"
+                            android:paddingLeft="10dp"
+                            />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/btn_escampur"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/img_escampur"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp" />
+
+                        <TextView
+                            android:id="@+id/txt_escampur"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="25dp"
+                            android:paddingLeft="10dp"
+                            />
+
+                    </LinearLayout>
+
 
 
                 </LinearLayout>

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.florent37.shapeofview.shapes.CircleView;
 import com.google.firebase.database.DataSnapshot;
@@ -22,10 +23,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class HomeAct extends AppCompatActivity {
-    LinearLayout btn_food,btn_drink, btn_snack;
+    LinearLayout btn_food,btn_drink, btn_baskethome;
 
     TextView namahome,nimhome,saldohome;
-    ImageView picprofile;
+    ImageView picprofile,btn_logout;
 
     DatabaseReference reference;
     String USERNAME_KEY = "usernamekey";
@@ -41,7 +42,8 @@ public class HomeAct extends AppCompatActivity {
         //Button
         btn_food = findViewById(R.id.btn_food);
         btn_drink = findViewById(R.id.btn_drink);
-        btn_snack = findViewById(R.id.btn_snack);
+        btn_baskethome = findViewById(R.id.btn_baskethome);
+        btn_logout = findViewById(R.id.btn_logout);
 
         //TextView
         namahome = findViewById(R.id.namahome);
@@ -80,11 +82,27 @@ public class HomeAct extends AppCompatActivity {
                 startActivity(gotodrink);
             }
         });
-        btn_snack.setOnClickListener(new View.OnClickListener() {
+        btn_baskethome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotosnack = new Intent (HomeAct.this, SnackAct.class);
-                startActivity(gotosnack);
+                Intent gotobasket = new Intent (HomeAct.this, BasketAct.class);
+                startActivity(gotobasket);
+            }
+        });
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //menghapus User saat ini
+                SharedPreferences sharedPreferences = getSharedPreferences(USERNAME_KEY, MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(username_key, null);
+                editor.apply();
+
+                Toast.makeText(getApplicationContext(), "Login untuk masuk :)", Toast.LENGTH_SHORT).show();
+
+                Intent gotosignin = new Intent (HomeAct.this, SignInAct.class);
+                startActivity(gotosignin);
+                finish();
             }
         });
     }
