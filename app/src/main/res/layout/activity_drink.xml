@@ -18,7 +18,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="0dp">
+            android:layout_marginBottom="0dp"
+            android:paddingBottom="10dp">
 
             <View
                 android:id="@+id/view"
@@ -61,20 +62,6 @@
                 tools:layout_editor_absoluteX="-28dp"
                 tools:layout_editor_absoluteY="117dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="MENU"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="#EDEDED" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -106,6 +93,15 @@
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
                             />
+                        <TextView
+                            android:id="@+id/txt_hargateh"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginEnd="10dp"
+                            android:gravity="right"
+                            />
 
                     </LinearLayout>
                     <LinearLayout
@@ -132,7 +128,15 @@
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
                             />
-
+                        <TextView
+                            android:id="@+id/txt_hargajeruk"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="25dp"
+                            android:gravity="right"
+                            />
                     </LinearLayout>
 
                     <LinearLayout
@@ -159,7 +163,15 @@
                             android:paddingLeft="10dp"
 
                             />
-
+                        <TextView
+                            android:id="@+id/txt_hargakopi"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="25dp"
+                            android:gravity="right"
+                            />
                     </LinearLayout>
 
                     <LinearLayout
@@ -185,7 +197,15 @@
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
                             />
-
+                        <TextView
+                            android:id="@+id/txt_hargagoodday"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="25dp"
+                            android:gravity="right"
+                            />
                     </LinearLayout>
 
                     <View
@@ -218,7 +238,15 @@
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
                             />
-
+                        <TextView
+                            android:id="@+id/txt_hargaesteh"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="25dp"
+                            android:gravity="right"
+                            />
                     </LinearLayout>
 
                     <LinearLayout
@@ -244,7 +272,15 @@
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
                             />
-
+                        <TextView
+                            android:id="@+id/txt_hargaesjeruk"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="25dp"
+                            android:gravity="right"
+                            />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/btn_esgoodday"
@@ -269,7 +305,15 @@
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
                             />
-
+                        <TextView
+                            android:id="@+id/txt_hargaesgoodday"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="25dp"
+                            android:gravity="right"
+                            />
                     </LinearLayout>
                     <LinearLayout
                         android:id="@+id/btn_escampur"
@@ -294,7 +338,15 @@
                             android:layout_marginTop="25dp"
                             android:paddingLeft="10dp"
                             />
-
+                        <TextView
+                            android:id="@+id/txt_hargaescampur"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="25dp"
+                            android:gravity="right"
+                            />
                     </LinearLayout>
 
 

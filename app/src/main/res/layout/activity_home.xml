@@ -12,6 +12,7 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="0dp"
         android:layout_marginEnd="0dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical"
         android:scrollbars="none"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,7 +22,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="0dp">
+            android:layout_marginBottom="10dp"
+            android:paddingBottom="10dp">
 
 
             <View
@@ -38,8 +40,8 @@
                 android:id="@+id/shapeOfView"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="65dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -47,7 +49,7 @@
                     android:id="@+id/picprofile"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:background="#dedede"/>
+                    android:background="#dedede" />
             </com.github.florent37.shapeofview.shapes.CircleView>
 
 
@@ -56,7 +58,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="65dp"
                 android:gravity="center"
                 android:textColor="#FFFFFF"
                 android:textSize="25sp"
@@ -108,6 +110,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="24dp"
                 android:background="@drawable/shape"
+                android:gravity="center"
                 android:orientation="vertical"
                 android:paddingTop="30dp"
                 android:paddingBottom="30dp"
@@ -118,8 +121,31 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/nimhome"
-                app:layout_constraintVertical_bias="0.358">
+                app:layout_constraintVertical_bias="0.191">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:text="MENU"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+                <View
+                    android:layout_width="350dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="#000000"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/shapeOfView"
+                    app:layout_constraintTop_toBottomOf="@id/nimhome"
+                    app:layout_constraintTop_toTopOf="@id/saldohome" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -139,13 +165,14 @@
                             android:id="@+id/food"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/fooood" />
+                            android:src="@drawable/makanannn" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="5dp"
                             android:text="Makanan"
+                            android:textColor="#000000"
 
                             />
 
@@ -163,13 +190,14 @@
                             android:id="@+id/minuman"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:src="@drawable/drinkk" />
+                            android:src="@drawable/minumann" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="5dp"
                             android:text="Minuman"
+                            android:textColor="#000000"
 
                             />
 
@@ -186,16 +214,15 @@
                         <ImageView
                             android:id="@+id/baskethome"
                             android:layout_width="80dp"
-                            android:layout_height="80dp"
-                            android:src="@drawable/list" />
+                            android:layout_height="76dp"
+                            android:src="@drawable/chart" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingTop="5dp"
                             android:text="Keranjang"
-
-                            />
+                            android:textColor="#000000" />
 
                     </LinearLayout>
 
@@ -209,24 +236,27 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="30dp"
                 android:text="Diskon menarik untukmu"
+                android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <HorizontalScrollView
+                android:id="@+id/horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="15dp"
                 android:scrollbars="none"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
 
                 <LinearLayout
+                    android:id="@+id/horiLine"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -236,20 +266,20 @@
                         android:layout_width="240dp"
                         android:layout_height="150dp"
                         android:layout_marginRight="24dp"
-                        android:src="@drawable/dis1" />
+                        android:src="@drawable/discountt" />
 
                     <ImageView
                         android:layout_width="240dp"
                         android:layout_height="150dp"
                         android:layout_marginRight="24dp"
-                        android:src="@drawable/dis2" />
+                        android:src="@drawable/discountt" />
 
                     <ImageView
 
                         android:layout_width="240dp"
                         android:layout_height="150dp"
                         android:layout_marginRight="24dp"
-                        android:background="@drawable/dis3" />
+                        android:background="@drawable/discountt" />
 
                 </LinearLayout>
             </HorizontalScrollView>
@@ -265,9 +295,36 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Amikom News"
+                android:layout_marginTop="30dp"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontal" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/textView5"
+                android:src="@drawable/dies"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

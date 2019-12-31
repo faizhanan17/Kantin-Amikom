@@ -20,7 +20,8 @@ import com.squareup.picasso.Picasso;
 public class DrinkAct extends AppCompatActivity {
     LinearLayout btn_teh,btn_jeruk,btn_kopi,btn_goodday,btn_escampur,btn_esteh,btn_esjeruk,btn_esgoodday;
     ImageView img_teh,img_jeruk,img_kopi,img_goodday,img_escampur,img_esteh,img_esjeruk,img_esgoodday;
-    TextView txt_teh,txt_jeruk,txt_kopi,txt_goodday,txt_escampur,txt_esteh,txt_esjeruk,txt_esgoodday;
+    TextView txt_teh,txt_jeruk,txt_kopi,txt_goodday,txt_escampur,txt_esteh,txt_esjeruk,txt_esgoodday,
+            txt_hargateh,txt_hargajeruk,txt_hargakopi,txt_hargagoodday,txt_hargaescampur,txt_hargaesteh,txt_hargaesjeruk,txt_hargaesgoodday;
 
     DatabaseReference referenceteh,referencejeruk,
             referencekopi,referencegoodday,referenceescampur,referenceesteh,
@@ -52,7 +53,7 @@ public class DrinkAct extends AppCompatActivity {
         img_esgoodday = findViewById(R.id.img_esgoodday);
         img_escampur = findViewById(R.id.img_escampur);
 
-        //txt
+        //TextView
         txt_teh = findViewById(R.id.txt_teh);
         txt_jeruk = findViewById(R.id.txt_jeruk);
         txt_kopi = findViewById(R.id.txt_kopi);
@@ -62,12 +63,23 @@ public class DrinkAct extends AppCompatActivity {
         txt_esgoodday = findViewById(R.id.txt_esgoodday);
         txt_escampur = findViewById(R.id.txt_escampur);
 
+        //TextView harga
+        txt_hargateh = findViewById(R.id.txt_hargateh);
+        txt_hargajeruk = findViewById(R.id.txt_hargajeruk);
+        txt_hargakopi = findViewById(R.id.txt_hargakopi);
+        txt_hargagoodday = findViewById(R.id.txt_hargagoodday);
+        txt_hargaesteh = findViewById(R.id.txt_hargaesteh);
+        txt_hargaesjeruk = findViewById(R.id.txt_hargaesjeruk);
+        txt_hargaesgoodday = findViewById(R.id.txt_hargaesgoodday);
+        txt_hargaescampur = findViewById(R.id.txt_hargaescampur);
+
         //Ambil data
         referenceteh = FirebaseDatabase.getInstance().getReference().child("MakanandanMinuman").child("teh");
         referenceteh.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_teh.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargateh.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_teh);
             }
 
@@ -81,6 +93,7 @@ public class DrinkAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_jeruk.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargajeruk.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_jeruk);
             }
 
@@ -94,6 +107,7 @@ public class DrinkAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_kopi.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargakopi.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_kopi);
             }
 
@@ -107,6 +121,7 @@ public class DrinkAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_goodday.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargagoodday.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_goodday);
             }
 
@@ -120,6 +135,7 @@ public class DrinkAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_esteh.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargaesteh.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_esteh);
             }
 
@@ -133,6 +149,7 @@ public class DrinkAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_esjeruk.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargaesjeruk.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_esjeruk);
             }
 
@@ -146,6 +163,7 @@ public class DrinkAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_esgoodday.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargaesgoodday.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_esgoodday);
             }
 
@@ -159,6 +177,7 @@ public class DrinkAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_escampur.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargaescampur.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(DrinkAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_escampur);
             }
 

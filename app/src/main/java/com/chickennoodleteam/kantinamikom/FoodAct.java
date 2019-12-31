@@ -20,7 +20,8 @@ import com.squareup.picasso.Picasso;
 public class FoodAct extends AppCompatActivity {
     LinearLayout btn_bakso,btn_pecel,btn_gadogado,btn_nasgor,btn_nasisayur,btn_mieayam;
     ImageView img_bakso,img_pecel,img_gadogado,img_nasgor,img_nasisayur,img_mieayam;
-    TextView txt_bakso,txt_pecel,txt_gadogado,txt_nasgor,txt_nasisayur,txt_mieayam;
+    TextView txt_bakso,txt_pecel,txt_gadogado,txt_nasgor,txt_nasisayur,txt_mieayam,
+            txt_hargabakso,txt_hargapecel,txt_hargagadogado,txt_harganasgor,txt_harganasisayur,txt_hargamieayam;
 
 
 
@@ -54,12 +55,21 @@ public class FoodAct extends AppCompatActivity {
         txt_nasisayur = findViewById(R.id.txt_nasisayur);
         txt_mieayam = findViewById(R.id.txt_mieayam);
 
+        //TextView Harga
+        txt_hargabakso = findViewById(R.id.txt_hargabakso);
+        txt_hargapecel = findViewById(R.id.txt_hargapecel);
+        txt_hargagadogado = findViewById(R.id.txt_hargagadogad);
+        txt_harganasgor = findViewById(R.id.txt_harganasgor);
+        txt_harganasisayur = findViewById(R.id.txt_harganasisayur);
+        txt_hargamieayam = findViewById(R.id.txt_hargamieayam);
+
         //Ambil data
         reference_bakso = FirebaseDatabase.getInstance().getReference().child("MakanandanMinuman").child("bakso");
         reference_bakso.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_bakso.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargabakso.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(FoodAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_bakso);
             }
 
@@ -74,6 +84,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_pecel.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargapecel.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(FoodAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_pecel);
             }
 
@@ -88,6 +99,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_nasgor.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_harganasgor.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(FoodAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_nasgor);
             }
 
@@ -102,6 +114,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_nasisayur.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_harganasisayur.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(FoodAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_nasisayur);
             }
 
@@ -116,6 +129,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_gadogado.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargagadogado.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(FoodAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_gadogado);
             }
 
@@ -130,6 +144,7 @@ public class FoodAct extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 txt_mieayam.setText(dataSnapshot.child("nama").getValue().toString());
+                txt_hargamieayam.setText("Rp. " + dataSnapshot.child("harga").getValue().toString());
                 Picasso.with(FoodAct.this).load(dataSnapshot.child("url_makanan").getValue().toString()).centerCrop().fit().into(img_mieayam);
             }
 

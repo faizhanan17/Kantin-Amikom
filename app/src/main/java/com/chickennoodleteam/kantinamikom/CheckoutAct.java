@@ -201,6 +201,7 @@ public class CheckoutAct extends AppCompatActivity {
 
 
                 Intent gotohome = new Intent(CheckoutAct.this, HomeAct.class);
+                gotohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(gotohome);
                 
 

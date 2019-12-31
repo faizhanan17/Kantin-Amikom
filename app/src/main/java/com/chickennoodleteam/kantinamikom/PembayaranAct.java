@@ -91,6 +91,7 @@ public class PembayaranAct extends AppCompatActivity {
                             reference3.removeValue();
 
                             Intent gotohome = new Intent(PembayaranAct.this, HomeAct.class);
+                            gotohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(gotohome);
 
                     }

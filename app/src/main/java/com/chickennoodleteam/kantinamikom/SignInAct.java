@@ -74,7 +74,9 @@ public class SignInAct extends AppCompatActivity {
                                         editor.apply();
 
                                         Intent gotohome = new Intent(SignInAct.this, HomeAct.class);
+                                        gotohome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK |Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         startActivity(gotohome);
+
                                     }
                                     else {
                                         Toast.makeText(getApplicationContext(), "Password Salah", Toast.LENGTH_SHORT).show();
